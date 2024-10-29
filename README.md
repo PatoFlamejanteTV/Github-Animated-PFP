@@ -2,6 +2,12 @@
 
 UserScript that adds .GIFs of your choice to Github profile pictures!
 
+<p align="center">
+  <img alt="Greasy Fork Downloads" src="https://img.shields.io/greasyfork/dt/514730-github-animated-profile-picture">
+  <img alt="Greasy Fork License" src="https://img.shields.io/greasyfork/l/514730-github-animated-profile-picture">
+  <img alt="Greasy Fork Version" src="https://img.shields.io/greasyfork/v/514730-github-animated-profile-picture">
+</p>
+
 ## Using / Installing
 
 Click [`this link`](https://github.com/PatoFlamejanteTV/Github-Animated-PFP/raw/refs/heads/main/src/main.user.js), it should open the TamperMonkey Import menu, just accept and go to any page that supports this.
