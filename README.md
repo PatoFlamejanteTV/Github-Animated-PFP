@@ -1,9 +1,8 @@
 ﻿# Github-Animated-PFP
 
-UserScript that adds .GIFs of your choice to Github profile pictures!
+UserScript that add .GIFs of your choice to your own Github profile picture!
 
 <p align="center">
-  <img alt="Greasy Fork Downloads" src="https://img.shields.io/greasyfork/dt/514730-github-animated-profile-picture">
   <img alt="Greasy Fork License" src="https://img.shields.io/greasyfork/l/514730-github-animated-profile-picture">
   <img alt="Greasy Fork Version" src="https://img.shields.io/greasyfork/v/514730-github-animated-profile-picture">
 </p>
