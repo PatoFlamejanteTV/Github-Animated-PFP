@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         GitHub Animated Profile Picture
 // @namespace    https://github.com/PatoFlamejanteTV
-// @version      1.30
+// @version      1.31
 // @description  Replace GitHub profile picture with a custom image from the user's repository if the image exists
 // @author       PatoFlamejanteTV
+// @license MIT
 // @match        *://github.com/*
 // @grant        none
 // ==/UserScript==
