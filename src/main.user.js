@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Animated Profile Picture
 // @namespace    https://github.com/PatoFlamejanteTV
-// @version      1.31
+// @version      1.32
 // @description  Replace GitHub profile picture with a custom image from the user's repository if the image exists
 // @author       PatoFlamejanteTV
 // @license MIT
@@ -12,7 +12,6 @@
 (function() {
     'use strict';
 
-    // Check if URL is valid, mostly used when the Github's Raw Assets CDN goes down or something else
     function checkImage(url) {
         return new Promise((resolve) => {
             const img = new Image();
@@ -33,21 +32,24 @@
 
     console.log("Checking Image:", customImageUrl);
 
-    checkImage(customImageUrl).then(exists => {
-        if (exists) {
-            // Change the PFP in the classes
-            profilePictureClasses.forEach(profileClass => {
-                // Seleciona os elementos de cada classe
-                const profilePictures = document.getElementsByClassName(profileClass);
-
-                // Converts to array & change
-                Array.from(profilePictures).forEach(img => {
-                    img.src = customImageUrl;
-                    img.srcset = customImageUrl; // Adjust(?)
+    function attemptProfilePictureChange(attempts) {
+        checkImage(customImageUrl).then(exists => {
+            if (exists) {
+                profilePictureClasses.forEach(profileClass => {
+                    const profilePictures = document.getElementsByClassName(profileClass);
+                    Array.from(profilePictures).forEach(img => {
+                        img.src = customImageUrl;
+                        img.srcset = customImageUrl;
+                    });
                 });
-            });
-        } else {
-            console.log("Animated PPF not found. :/");
-        }
-    });
+            } else if (attempts > 0) {
+                console.log(`Attempt failed. Retrying... (${attempts} attempts left)`);
+                setTimeout(() => attemptProfilePictureChange(attempts - 1), 2000);
+            } else {
+                console.log("Animated PFP not found after multiple attempts.");
+            }
+        });
+    }
+
+    attemptProfilePictureChange(3); // Start with 3 attempts
 })();
