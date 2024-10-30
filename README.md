@@ -1,5 +1,9 @@
 ﻿# Github-Animated-PFP
 
+<p align="center">
+  <img alt="GPPA" src="./.github/screenshots/GAPP.png">
+</p>
+
 UserScript that add .GIFs of your choice to your own Github profile picture!
 
 <p align="center">
